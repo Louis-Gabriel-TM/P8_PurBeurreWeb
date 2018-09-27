@@ -17,8 +17,12 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import include, path
 
+from foodfacts import views
+
 
 urlpatterns = [
+    path('', views.index, name='index'),
+    path('disclaimer', views.disclaimer, name='disclaimer'),
     path('foodfacts/', include('foodfacts.urls')),
     path('admin/', admin.site.urls),
 ]
