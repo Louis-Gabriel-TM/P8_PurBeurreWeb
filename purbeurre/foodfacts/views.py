@@ -6,8 +6,12 @@ def index(request):
     return HttpResponse("--- ACCUEIL DE PUR BEURRE ---")
 
 
-def details(request):
-    return HttpResponse("--- PAGE DETAILLANT UN PRODUIT ---")
+def details(request, product_id):
+    id = int(product_id)
+    return HttpResponse("""
+        --- PAGE DETAILLANT UN PRODUIT ---<br><br>
+        Détails du produit d'identifinat {}
+        """.format(id))
 
 
 def disclaimer(request):
@@ -19,4 +23,8 @@ def my_products(request):
 
 
 def results(request):
-    return HttpResponse("--- PAGE DE RESULTATS ---")
+    query = request.GET.get('query')
+    return HttpResponse("""
+        --- PAGE DE RESULTATS ---<br><br>
+        Résultats pour la requête '{}'
+        """.format(query))
