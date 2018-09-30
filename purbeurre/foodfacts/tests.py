@@ -22,3 +22,15 @@ class TestViewsStatusCode(TestCase):
     def test_results_page_status_code(self):
         response = self.client.get(reverse('results'))
         self.assertEqual(response.status_code, 200)
+
+    # test that details page return 200 if the product exists
+
+    # test that details page return 404 if the product does not exist
+
+
+class TestUserCreation(TestCase):
+    pass
+
+
+class TestSavingASubstitute(TestCase):
+    pass

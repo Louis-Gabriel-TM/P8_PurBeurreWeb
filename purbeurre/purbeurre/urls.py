@@ -24,5 +24,6 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('disclaimer', views.disclaimer, name='disclaimer'),
     path('foodfacts/', include('foodfacts.urls')),
+    path('user/', include('user.urls')),
     path('admin/', admin.site.urls, name='admin'),
 ]
