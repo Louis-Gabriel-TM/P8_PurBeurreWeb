@@ -1,6 +1,6 @@
-<!DOCTYPE html>
+{% extends 'foodfacts/base.html' %}
 
-<html>
+{% block content %}
 
 <head>
     <title>Sign In</title>
@@ -8,6 +8,20 @@
 
 <body>
     <h1>Créer un compte</h1>
+
+    {% if error %}
+    <p><strong>{{ error}}</strong></p>
+    {% endif %}
+
+    {% if user.is_authenticated %}
+    Vous êtes déjà connecté, {{ user.username }}.
+    {% else %}
+    <form action="." method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Créer un compte" />
+    </form>
+    {% endif %}
 </body>
 
-</html>
+{% endblock %}

@@ -20,6 +20,13 @@ class SignInForm(forms.Form):
         max_length=50,
         required=True
     )
+    """
+        email = forms.EmailField(
+        label="E-mail",
+    )
+    email_confirm = forms.EmailField(
+        label="Confirmez votre email",
+    ) """
     password = forms.CharField(
         label="Mot de passe",
         widget=forms.PasswordInput,
